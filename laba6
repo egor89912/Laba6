@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ogo
+{
+    public class Matrix
+    {
+        private int width;
+
+        private int heith;
+
+        public Matrix()
+        {
+            Random rnd = new Random();
+
+            int x = rnd.Next(2, 5);
+
+            width = heith = x;
+
+        }
+
+        public int[,] mas = new int[100, 100];
+
+        public Matrix(int width, int heith)
+        {
+            this.width = width;
+
+            this.heith = heith;
+
+        }
+
+        public void Input()
+        {
+            Random rand = new Random();
+
+            for (int i = 0; i < width; i++)
+
+                for (int j = 0; j < heith; j++)
+                {
+                    mas[i, j] = rand.Next(1, 100);
+                }
+        }
+
+        public void Output()
+        {
+
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < heith; j++)
+                {
+
+                    Console.Write(mas[i, j] + "\t");
+                }
+                Console.WriteLine("\n");
+            }
+
+        }
+    }
+}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Случайная матрица:");
+
+            Matrix a = new Matrix();
+
+            a.Input();
+
+            a.Output();
+
+            Console.WriteLine("-------------------------");
+        }
+    }
+}
